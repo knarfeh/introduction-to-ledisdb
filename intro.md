@@ -13,6 +13,7 @@
 + Transaction
 + Replication
 + Embedded Lib
++ Lua
 + In Action
 + Todo
 
@@ -24,6 +25,7 @@
 + Multi backend databases: LevelDB, RocksDB, GoLevelDB, LMDB, BoltDB, HyperLevelDB.
 + Transaction: `begin`, `commit`, `rollback`, with LMDB or BoltDB.
 + Replication: master/slave. 
++ Lua script.
 + More......
 
 %%%
@@ -228,6 +230,18 @@ db.Get(key)
 
 %%%
 
+## Lua
+
+```
+ledis>eval "return {KEYS[1],KEYS[2],ARGV[1],ARGV[2]}" 2 key1 key2 first second
+1) "key1"
+2) "key2"
+3) "first"
+4) "second"
+```
+
+%%%
+
 ## In Action
 
 ### Message Push Service
@@ -241,7 +255,6 @@ db.Get(key)
 
 ## Todo
 
-+ Integrate Lua.
 + Cluster support.
 + More......
 
