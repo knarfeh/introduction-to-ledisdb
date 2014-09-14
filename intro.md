@@ -211,8 +211,8 @@ data......
 ## Replication
 
 + Dump + BinLog
-+ Row-Based Format, maybe statement-based added?
-+ Sync every 1 seconds, use push later.
++ Row-Based Format
++ Pull + Push
 
 %%%
 
@@ -255,7 +255,8 @@ ledis>eval "return {KEYS[1],KEYS[2],ARGV[1],ARGV[2]}" 2 key1 key2 first second
 
 ## Todo
 
-+ Cluster support.
++ Strong Consensus Replication, using Raft or Paxos?
++ Cluster support, sharding.
 + More......
 
 %%%
